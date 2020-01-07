@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
               ),
               Container(
                 height: 325.0,
-                padding: EdgeInsets.only(top: 16.0),
+                padding: EdgeInsets.only(top: 8.0),
                 width: double.infinity,
                 child: Card(
                   color: Theme.of(context).primaryColorDark,
@@ -96,6 +96,30 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                   ),
+                ),
+              ),
+              Container(
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: RaisedButton(
+                          onPressed: () {},
+                          child: Text('Lyrics'),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: RaisedButton(
+                          onPressed: () {},
+                          child: Text('More'),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

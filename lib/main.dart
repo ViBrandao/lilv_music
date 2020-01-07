@@ -9,8 +9,8 @@ class MusicApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
         primaryColor: Color(0xff212121),
         primaryColorDark: Color(0xff000000),
         primaryColorLight: Color(0xff484848),

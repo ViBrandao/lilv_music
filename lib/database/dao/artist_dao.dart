@@ -24,9 +24,19 @@ class ArtistDao {
     return db.insert(_tableName, artistMap);
   }
 
+  Future<int> delete(Artist artist) async {
+    final Database db = await getDatabase();
+    return db.delete(
+      _tableName,
+      where: _code + '=?',
+      whereArgs: [artist.code],
+    );
+  }
+
   Future<List<Artist>> findAll() async {
     final Database db = await getDatabase();
-    final List<Map<String, dynamic>> result = await db.rawQuery('SELECT * FROM $_tableName ORDER BY $_id DESC');
+    final List<Map<String, dynamic>> result =
+        await db.rawQuery('SELECT * FROM $_tableName ORDER BY $_id DESC');
     List<Artist> artists = _toList(result);
 
     return artists;

@@ -42,12 +42,9 @@ class ArtistSearchButton extends StatelessWidget {
           });
         }
       },
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          'Search',
-          style: TextStyle(fontSize: 16.0),
-        ),
+      child: Text(
+        'Search',
+        style: TextStyle(fontSize: 16.0),
       ),
     );
   }

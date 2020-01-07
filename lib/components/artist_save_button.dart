@@ -13,7 +13,7 @@ class ArtistSaveButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       backgroundColor: Color(0xfff50057),
-      child: Icon(Icons.star_border),
+      child: Icon(Icons.save),
       onPressed: () async {
         List<Artist> artists = await _artistDao.findByCode(_artist.code);
 
@@ -36,12 +36,14 @@ class ArtistSaveButton extends StatelessWidget {
             );
           });
         } else {
-          Scaffold.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Artist already on favorites'),
-              duration: Duration(seconds: 2),
-            ),
-          );
+          _artistDao.delete(_artist).then((id) {
+            Scaffold.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Artist removed from favorites'),
+                duration: Duration(seconds: 2),
+              ),
+            );
+          });
         }
       },
     );
