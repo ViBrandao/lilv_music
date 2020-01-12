@@ -6,6 +6,7 @@ import 'package:lilv_music/components/artists_carousel.dart';
 import 'package:lilv_music/database/dao/artist_dao.dart';
 import 'package:lilv_music/http/webclients/artist_webclient.dart';
 import 'package:lilv_music/models/artist.dart';
+import 'package:lilv_music/screens/songs.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -105,7 +106,13 @@ class _HomeState extends State<Home> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: RaisedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => Songs(),
+                              ),
+                            );
+                          },
                           child: Text('Lyrics'),
                         ),
                       ),

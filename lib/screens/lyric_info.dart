@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lilv_music/models/lyric.dart';
 
-class MusicInfo extends StatelessWidget {
+class LyricInfo extends StatelessWidget {
   final Lyric _lyric;
 
-  MusicInfo(this._lyric);
+  LyricInfo(this._lyric);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class MusicInfo extends StatelessWidget {
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColorDark,
-        title: Text('Music'),
+        title: Text('Lyric'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -44,11 +44,6 @@ class MusicInfo extends StatelessWidget {
           ),
         ],
       ),
-//      floatingActionButton: FloatingActionButton(
-//        backgroundColor: Color(0xfff50057),
-//        child: Icon(Icons.star_border),
-//        onPressed: () {},
-//      ),
     );
   }
 }

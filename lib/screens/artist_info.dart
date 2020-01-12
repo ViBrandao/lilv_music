@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lilv_music/components/artist_save_button.dart';
-import 'package:lilv_music/components/artists_list_view.dart';
+import 'package:lilv_music/components/artist_songs_list_view.dart';
 import 'package:lilv_music/database/dao/artist_dao.dart';
+import 'package:lilv_music/database/dao/song_dao.dart';
 import 'package:lilv_music/http/webclients/lyric_webclient.dart';
 import 'package:lilv_music/models/artist.dart';
 
@@ -9,6 +10,7 @@ class ArtistInfo extends StatelessWidget {
   final Artist _artist;
   final LyricWebClient _lyricWebClient = LyricWebClient();
   final ArtistDao _artistDao = ArtistDao();
+  final SongDao _songDao = new SongDao();
 
   ArtistInfo(this._artist);
 
@@ -63,7 +65,7 @@ class ArtistInfo extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: ArtistsListView(_artist, _lyricWebClient),
+            child: ArtistSongsListView(_artist.songs, _lyricWebClient, _songDao),
           ),
         ],
       ),

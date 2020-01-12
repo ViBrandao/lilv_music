@@ -1,4 +1,5 @@
 import 'package:lilv_music/database/dao/artist_dao.dart';
+import 'package:lilv_music/database/dao/song_dao.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -10,7 +11,8 @@ Future<Database> getDatabase() async {
     path,
     onCreate: (db, version) {
       db.execute(ArtistDao.tableSql);
+      db.execute(SongDao.tableSql);
     },
-    version: 1,
+    version: 5,
   );
 }
